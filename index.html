@@ -1,11 +1,65 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101410"><meta name="description" content="Pagina-Ciro: partidos, resultados y tablas del fútbol."><title>Pagina-Ciro | Fútbol</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
-<body><header class="topbar"><a class="brand" href="#"><span class="brand-mark">PC</span><span>PAGINA<span class="brand-accent">-CIRO</span><small>TODO EL FÚTBOL, EN UN SOLO LUGAR</small></span></a><nav class="main-nav"><a class="active" href="#partidos">Partidos</a><a href="#ligas">Ligas</a><a href="#tabla">Tabla demo</a></nav><div class="header-live"><span class="live-dot"></span> CENTRO DE PARTIDOS</div></header>
-<div class="ticker">⚽ EL FÚTBOL SE VIVE ACÁ <span>/</span> MARCADORES <span>/</span> FIXTURES <span>/</span> TABLAS</div>
-<main class="layout"><aside class="sidebar"><div class="side-heading">COMPETICIONES</div><button class="league-link selected" data-league="all"><span>⚽</span> Todos los partidos <span class="count">8</span></button><button class="league-link" data-league="Argentina"><span>🇦🇷</span> Argentina <span class="count">3</span></button><button class="league-link" data-league="Europa"><span>🌍</span> Europa <span class="count">3</span></button><button class="league-link" data-league="Internacional"><span>🏆</span> Internacional <span class="count">2</span></button><div class="side-note"><b>i</b><p>Maqueta inicial: partidos y resultados ficticios, no datos en vivo.</p></div><div class="side-card"><small>PAGINA-CIRO</small><h3>EL PARTIDO<br>NO TERMINA<br>EN LA CANCHA.</h3><p>Resultados, pasión y fútbol.</p><span class="ball-art">⚽</span></div></aside>
-<section class="content" id="partidos"><div class="page-title-row"><div><p class="eyebrow"><i class="live-dot"></i> CENTRO DE PARTIDOS</p><h1>PARTIDOS <span>DE HOY</span></h1><p class="subhead">Todo lo que pasa en el fútbol, minuto a minuto.</p></div><div class="date-chip">◷ <span id="today-date">HOY</span></div></div>
-<div class="filters"><div class="filter-tabs"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="live"><i class="live-dot"></i> En vivo</button><button class="filter" data-filter="scheduled">Próximos</button><button class="filter" data-filter="finished">Finalizados</button></div><label class="search">⌕ <input id="search" type="search" placeholder="Buscar equipo..." aria-label="Buscar equipo"></label></div>
-<div class="notice"><b>✦</b><div><strong>Bienvenido a Pagina-Ciro</strong><p>Esta maqueta usa encuentros de ejemplo. La conexión a una API deportiva se agrega en la siguiente etapa.</p></div><button id="dismiss-notice" aria-label="Cerrar aviso">×</button></div><div id="match-list" class="match-list" aria-live="polite"></div><div class="load-row"><span></span><small id="last-update">DEMO · ACTUALIZACIÓN VISUAL</small><span></span></div>
-<section class="standings" id="tabla"><div class="section-heading"><div><p class="eyebrow">TEMPORADA · DEMO</p><h2>TABLA DE POSICIONES</h2></div><b class="demo-tag">DATOS FICTICIOS</b></div><div class="table-wrap"><table><thead><tr><th>#</th><th>EQUIPO</th><th>PJ</th><th>DG</th><th>PTS</th></tr></thead><tbody id="table-body"></tbody></table></div></section>
-<section class="leagues-section" id="ligas"><div class="section-heading"><div><p class="eyebrow">SEGUÍ TU PASIÓN</p><h2>FÚTBOL SIN FRONTERAS</h2></div></div><div class="league-cards"><button data-league="Argentina"><span>🇦🇷</span><strong>Fútbol argentino</strong><small>Primera · Ascenso</small><b>VER PARTIDOS ↗</b></button><button data-league="Europa"><span>🌍</span><strong>Fútbol europeo</strong><small>Ligas y copas</small><b>VER PARTIDOS ↗</b></button><button data-league="Internacional"><span>🏆</span><strong>Internacional</strong><small>Selecciones · Copas</small><b>VER PARTIDOS ↗</b></button></div></section></section></main>
-<footer><a class="brand footer-brand" href="#"><span class="brand-mark">PC</span><span>PAGINA<span class="brand-accent">-CIRO</span></span></a><span>PROYECTO INDEPENDIENTE · VERSIÓN DEMO</span><span>EL FÚTBOL NOS UNE.</span></footer><script src="script.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10150f">
+  <meta name="description" content="La Cancha: minijuegos de fútbol para competir, votar y demostrar cuánto sabés.">
+  <title>LA CANCHA — Minijuegos de fútbol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"><span class="topline-dot"></span> TU CANCHA. TUS REGLAS. <span class="topline-right">TEMPORADA DE MINIJUEGOS <b>01</b></span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="La Cancha inicio"><span class="brand-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 42 13v22L24 45 6 35V13L24 3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m24 13 7 5-3 8h-8l-3-8 7-5Zm-7 5-7-1m18 1 7-1m-15 8-4 8m12-8 4 8M10 17l-1 13 10 6m10 0 10-6-1-13" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><span class="brand-name">LA<span>CANCHA</span><small>FÚTBOL PARA JUGARLO</small></span></a>
+    <nav class="nav-links"><a href="#juegos" class="nav-active">Minijuegos</a><a href="#ranking">Ranking</a><a href="#como-funciona">Cómo jugar</a></nav>
+    <button class="profile-button" id="profile-button"><span class="profile-avatar">10</span><span>MI PERFIL</span><span class="profile-chevron">↗</span></button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="kicker-line"></span> EL FÚTBOL SE JUEGA TAMBIÉN ACÁ</div>
+        <h1>NO MIRES<br>EL JUEGO.<br><em>JUGÁ.</em></h1>
+        <p>Armá equipos, ganá penales, discutí quién es mejor y llevate la gloria. La cancha está abierta.</p>
+        <div class="hero-actions"><a href="#juegos" class="button-primary">ELEGIR MINIJUEGO <span>↘</span></a><button class="button-quiet" id="daily-cta"><span class="play-triangle">▶</span> DESAFÍO DEL DÍA</button></div>
+        <div class="hero-footnote"><span class="avatar-stack"><i>⚽</i><i>🏆</i><i>10</i></span><span><b id="player-count">1.284</b> hinchas en la cancha</span><span class="separator">/</span><span>100% pasión</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-stamp">TEMPORADA<br><b>01 / 26</b></div>
+        <div class="stadium-glow"></div>
+        <div class="pitch">
+          <div class="pitch-line midline"></div><div class="pitch-circle"></div><div class="pitch-box pitch-box-left"></div><div class="pitch-box pitch-box-right"></div><div class="pitch-small pitch-small-left"></div><div class="pitch-small pitch-small-right"></div><div class="pitch-spot pitch-spot-left"></div><div class="pitch-spot pitch-spot-right"></div>
+          <div class="pitch-player player-a"><span>10</span></div><div class="pitch-player player-b"><span>9</span></div><div class="pitch-player player-c"><span>7</span></div><div class="pitch-ball">⚽</div>
+        </div>
+        <div class="hero-card"><span class="hero-card-icon">✳</span><div><small>TU PRÓXIMO RETO</small><b>¿LA CLAVÁS AL ÁNGULO?</b></div><button data-game="penales" aria-label="Jugar desafío de penales">↗</button></div>
+        <div class="visual-number">LC<span>.</span></div>
+      </div>
+    </section>
+    <section class="ticker"><div>ARMÁ TU XI <span>✳</span> ADIVINÁ AL JUGADOR <span>✳</span> TIRÁ EL PENAL <span>✳</span> DEBATÍ CON LA HINCHADA <span>✳</span> ARMÁ TU XI <span>✳</span> ADIVINÁ AL JUGADOR <span>✳</span></div></section>
+    <section class="games-section section-shell" id="juegos">
+      <div class="section-top"><div><div class="section-kicker"><span>01</span> ELEGÍ TU CANCHA</div><h2>MINIJUEGOS<span class="period">.</span></h2><p>Quince formas de demostrar que de fútbol sabés.</p></div><div class="section-tools"><label class="search-box"><span>⌕</span><input id="game-search" type="search" placeholder="Buscar un juego..." aria-label="Buscar minijuego"></label><button class="view-toggle active" aria-label="Vista en grilla">▦</button></div></div>
+      <div class="category-bar" role="group" aria-label="Filtrar juegos"><button class="category active" data-category="Todos">TODOS <span>15</span></button><button class="category" data-category="Competencia">COMPETENCIA</button><button class="category" data-category="Conocimiento">CONOCIMIENTO</button><button class="category" data-category="Estrategia">ESTRATEGIA</button><button class="category" data-category="Comunidad">COMUNIDAD</button></div>
+      <div class="featured-game" id="featured-game">
+        <div class="featured-art"><div class="featured-orbit"></div><div class="featured-ball">⚽</div><div class="featured-ribbon">RETO DESTACADO</div><div class="featured-number">01</div></div>
+        <div class="featured-copy"><div class="featured-meta"><span class="tag tag-green">JUGÁ AHORA</span><span class="difficulty">● ● ○ <small>NIVEL MEDIO</small></span></div><h3>DESAFÍO<br>DE LOS PENALES</h3><p>El arquero te estudia. Elegí dónde patear, engañalo y convertí una serie de cinco para subir tu racha.</p><div class="featured-bottom"><div><small>MODALIDAD</small><b>5 PENALES · RÉCORD PERSONAL</b></div><button class="button-primary" data-game="penales">ENTRAR A LA CANCHA <span>↗</span></button></div></div>
+      </div>
+      <div class="game-grid" id="game-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>No encontramos juegos con ese nombre. Probá otra búsqueda.</div>
+    </section>
+    <section class="community-section" id="ranking">
+      <div class="community-copy"><div class="section-kicker"><span>02</span> LA HINCHADA DECIDE</div><h2>NO HAY VAR<br>PARA LOS <em>DEBATES.</em></h2><p>¿Messi o Maradona? ¿Qué escudo es más grande? Elegí tu lado y defendelo con argumentos.</p><button class="button-light" data-game="mejor">ABRIR UN DEBATE <span>↗</span></button></div>
+      <div class="vote-card"><div class="vote-card-head"><span class="live-pill"><i></i> VOTACIÓN ABIERTA</span><span>DEBATE #024</span></div><div class="versus"><button class="vote-option" data-vote="Messi"><span class="vote-portrait portrait-messi">10</span><b>MESSI</b><small>LA PULGA</small></button><div class="versus-mark">VS</div><button class="vote-option" data-vote="Maradona"><span class="vote-portrait portrait-maradona">D10S</span><b>MARADONA</b><small>EL DIEGO</small></button></div><div class="vote-meter"><div class="vote-meter-label"><span>MESSI <b id="messi-percent">58%</b></span><span>MARADONA <b id="maradona-percent">42%</b></span></div><div class="meter-track"><span id="meter-messi" style="width:58%"></span></div></div><div class="vote-card-foot"><span id="vote-total">2.418 votos</span><span>LOS RESULTADOS CAMBIAN CON TU VOTO</span></div></div>
+    </section>
+    <section class="ranking-section section-shell" id="como-funciona"><div class="section-top"><div><div class="section-kicker"><span>03</span> PUNTAJE DE LA COMUNIDAD</div><h2>EL VESTUARIO<span class="period">.</span></h2><p>Jugá, sumá puntos y buscá tu lugar en el once.</p></div><div class="ranking-badge">♜ TABLA DEMO</div></div><div class="leaderboard"><div class="leader-row leader-head"><span>#</span><span>JUGADOR</span><span>JUEGOS</span><span>VICTORIAS</span><span>PTS</span></div><div class="leader-row"><span class="rank rank-gold">01</span><span class="leader-name"><i class="leader-avatar avatar-gold">10</i><b>ElDiezEterno</b><small>LEYENDA</small></span><span>42</span><span>31</span><strong>2.450</strong></div><div class="leader-row"><span class="rank rank-silver">02</span><span class="leader-name"><i class="leader-avatar avatar-silver">9</i><b>Futbolero_23</b></span><span>38</span><span>26</span><strong>2.180</strong></div><div class="leader-row"><span class="rank rank-bronze">03</span><span class="leader-name"><i class="leader-avatar avatar-bronze">7</i><b>LaBandaDel10</b></span><span>35</span><span>24</span><strong>1.960</strong></div><div class="leader-row"><span class="rank">04</span><span class="leader-name"><i class="leader-avatar">⚽</i><b>PresiónAlta</b></span><span>29</span><span>19</span><strong>1.540</strong></div></div><p class="demo-disclaimer">Los nombres y puntajes de esta tabla son de ejemplo. El progreso de tus minijuegos se guarda en este navegador.</p></section>
+    <section class="bottom-cta"><div class="bottom-mark">LC<span>.</span></div><div><div class="section-kicker">LA CANCHA ES TUYA</div><h2>¿QUÉ ESPERÁS PARA JUGAR?</h2></div><a href="#juegos" class="button-primary">ELEGIR JUEGO <span>↗</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-icon small-icon">LC</span><span class="brand-name">LA<span>CANCHA</span><small>FÚTBOL PARA JUGARLO</small></span></a><span>UN PROYECTO HECHO POR HINCHAS.</span><span>NO ES UN SITIO OFICIAL DE NINGÚN CLUB.</span></footer>
+  <div class="modal-backdrop" id="game-modal" hidden><section class="game-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div class="modal-brand"><span>LC.</span><small>MINIJUEGO</small></div><button class="modal-close" id="modal-close" aria-label="Cerrar juego">×</button></div><div id="modal-content" class="modal-content"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
